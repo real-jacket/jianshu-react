@@ -9,7 +9,7 @@
     "react-dom": "^16.10.1",
     "react-scripts": "3.1.2"
   },
-  "homepage": "https://real-jacket.github.io/jianshu-react/",
+  "homepage": "https://real-jacket.github.io/jianshu-react",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
