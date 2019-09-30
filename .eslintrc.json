@@ -12,6 +12,7 @@
     "parser": "babel-eslint",
     "rules": {
       "better-styled-components/sort-declarations-alphabetically": 2,// styled-component
+      "linebreak-style": ["off", "windows"], // 换行符
       "eqeqeq": 0,
       "semi": [
         2, "never"
