@@ -1,7 +1,8 @@
 {
     "extends": "airbnb",
     "plugins": [
-      "react"
+      "react",
+      "better-styled-components"
     ],
     "env": {
       "browser": true,
@@ -10,6 +11,7 @@
     },
     "parser": "babel-eslint",
     "rules": {
+      "better-styled-components/sort-declarations-alphabetically": 2,// styled-component
       "eqeqeq": 0,
       "semi": [
         2, "never"
