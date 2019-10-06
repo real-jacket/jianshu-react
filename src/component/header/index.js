@@ -26,7 +26,7 @@ class Header extends Component {
       <Wrapper>
         <div className="header">
           <Logo>
-            <img src="/jianshu_log.png" alt="Nav logo" />
+            <img src={`${process.env.PUBLIC_URL}/jianshu_log.png`} alt="Nav logo" />
           </Logo>
           <Nav>
             <li className="home">
@@ -118,7 +118,7 @@ class Header extends Component {
             </li>
             <li className="login">
               <span className="Aa">Aa</span>
-              <img src="/jianshu_beta.png" alt="diamongo" height="25" />
+              <img src={`${process.env.PUBLIC_URL}/jianshu_beta.png`} alt="diamongo" height="25" />
               <span>登录</span>
             </li>
           </Nav>
