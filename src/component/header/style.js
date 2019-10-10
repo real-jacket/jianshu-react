@@ -195,6 +195,7 @@ export const Addition = styled.div`
             background:#ec6149;
             color:white;
             display:flex;
+            white-space:nowrap;
             svg{
                 height:20px;
                 margin-right:4px;
