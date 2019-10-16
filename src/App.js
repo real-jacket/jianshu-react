@@ -1,8 +1,8 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import GlobalStyle from './style'
-import Header from './component/header'
-import store from './store'
+import Header from 'component/header'
+import GlobalStyle from '@/style'
+import store from '@/store'
 
 function App() {
   return (
