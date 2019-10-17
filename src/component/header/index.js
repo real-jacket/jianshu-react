@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import {
+  onFoucus, onMoveEnter, onBlur, onMoveOut,
+} from '@/store/header/actions'
 import {
   Wrapper,
   Logo,
@@ -11,130 +15,133 @@ import {
   SearchHeader,
 } from './style'
 
-class Header extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      focus: false,
-      mouseIn: false,
-    }
-  }
-
-  render() {
-    const { focus, mouseIn } = this.state
-    return (
-      <Wrapper>
-        <div className="header">
-          <Logo>
-            <img src={`${process.env.PUBLIC_URL}/jianshu_log.png`} alt="Nav logo" />
-          </Logo>
-          <Nav>
-            <li className="home">
-              <svg className="icon" aria-hidden="true">
-                <use xlinkHref="#icon-zhinanzhen" />
-              </svg>
+function Header(props) {
+  const {
+    focused, mouseIn, handleInputBluer, handleInputFocus, handleMouseEnter, handleMouseOut,
+  } = props
+  return (
+    <Wrapper>
+      <div className="header">
+        <Logo>
+          <img src={`${process.env.PUBLIC_URL}/jianshu_log.png`} alt="Nav logo" />
+        </Logo>
+        <Nav>
+          <li className="home">
+            <svg className="icon" aria-hidden="true">
+              <use xlinkHref="#icon-zhinanzhen" />
+            </svg>
               首页
-            </li>
-            <li className="download">
-              <svg className="icon" aria-hidden="true">
-                <use xlinkHref="#icon-shoujixiazai" />
-              </svg>
+          </li>
+          <li className="download">
+            <svg className="icon" aria-hidden="true">
+              <use xlinkHref="#icon-shoujixiazai" />
+            </svg>
               下载App
-            </li>
-            <li className="navsearch">
-              <NavSearch focus={focus}>
-                <input
-                  onFocus={() => {
-                    this.setState((state) => ({
-                      ...state,
-                      focus: true,
-                    }))
-                  }}
-                  onBlur={() => {
-                    this.setState((state) => ({
-                      ...state,
-                      focus: false,
-                    }))
-                  }}
-                  placeholder="搜索"
-                />
-                <SearchIcon focus={focus}>
-                  <svg className="icon" aria-hidden="true">
-                    <use xlinkHref="#icon-search" />
-                  </svg>
-                </SearchIcon>
-                <SearchRecommend
-                  focus={focus}
-                  mouseIn={mouseIn}
-                  onMouseEnter={() => {
-                    this.setState((state) => ({
-                      ...state,
-                      mouseIn: true,
-                    }))
-                  }}
-                  onMouseLeave={() => {
-                    this.setState((state) => ({
-                      ...state,
-                      mouseIn: false,
-                    }))
-                  }}
-                >
-                  <div className="wrapper">
-                    <SearchHeader>
-                      <span>
+          </li>
+          <li className="navsearch">
+            <NavSearch focus={focused}>
+              <input
+                onFocus={() => {
+                  handleInputFocus()
+                }}
+                onBlur={() => {
+                  handleInputBluer()
+                }}
+                placeholder="搜索"
+              />
+              <SearchIcon focus={focused}>
+                <svg className="icon" aria-hidden="true">
+                  <use xlinkHref="#icon-search" />
+                </svg>
+              </SearchIcon>
+              <SearchRecommend
+                focus={focused}
+                mouseIn={mouseIn}
+                onMouseEnter={() => {
+                  handleMouseEnter()
+                }}
+                onMouseLeave={() => {
+                  handleMouseOut()
+                }}
+              >
+                <div className="wrapper">
+                  <SearchHeader>
+                    <span>
                         热门搜索
-                      </span>
-                      <span>
-                        <svg className="icon" aria-hidden="true">
-                          <use xlinkHref="#icon-qiehuan" />
-                        </svg>
+                    </span>
+                    <span>
+                      <svg className="icon" aria-hidden="true">
+                        <use xlinkHref="#icon-qiehuan" />
+                      </svg>
                         换一换
-                      </span>
-                    </SearchHeader>
-                    <SearchItem>
+                    </span>
+                  </SearchHeader>
+                  <SearchItem>
                       销售易
-                    </SearchItem>
-                    <SearchItem>
+                  </SearchItem>
+                  <SearchItem>
                       销售易
-                    </SearchItem>
-                    <SearchItem>
+                  </SearchItem>
+                  <SearchItem>
                       销售易
-                    </SearchItem>
-                    <SearchItem>
+                  </SearchItem>
+                  <SearchItem>
                       销售易
-                    </SearchItem>
-                    <SearchItem>
+                  </SearchItem>
+                  <SearchItem>
                       销售易
-                    </SearchItem>
-                    <SearchItem>
+                  </SearchItem>
+                  <SearchItem>
                       销售易
-                    </SearchItem>
-                    <SearchItem>
+                  </SearchItem>
+                  <SearchItem>
                       销售易
-                    </SearchItem>
-                  </div>
-                </SearchRecommend>
-              </NavSearch>
-            </li>
-            <li className="login">
-              <span className="Aa">Aa</span>
-              <img src={`${process.env.PUBLIC_URL}/jianshu_beta.png`} alt="diamongo" height="25" />
-              <span>登录</span>
-            </li>
-          </Nav>
-          <Addition>
-            <button type="button" className="register">注册</button>
-            <button type="button" className="artical">
-              <svg className="icon" aria-hidden="true">
-                <use xlinkHref="#icon-yumaobi" />
-              </svg>
+                  </SearchItem>
+                </div>
+              </SearchRecommend>
+            </NavSearch>
+          </li>
+          <li className="login">
+            <span className="Aa">Aa</span>
+            <img src={`${process.env.PUBLIC_URL}/jianshu_beta.png`} alt="diamongo" height="25" />
+            <span>登录</span>
+          </li>
+        </Nav>
+        <Addition>
+          <button type="button" className="register">注册</button>
+          <button type="button" className="artical">
+            <svg className="icon" aria-hidden="true">
+              <use xlinkHref="#icon-yumaobi" />
+            </svg>
               写文章
-            </button>
-          </Addition>
-        </div>
-      </Wrapper>
-    )
-  }
+          </button>
+        </Addition>
+      </div>
+    </Wrapper>
+  )
 }
 
-export default Header
+const mapStateToProps = (state /* , ownProps */) => ({
+  focused: state.getIn(['header', 'focused']),
+  mouseIn: state.getIn(['header', 'mouseIn']),
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  handleInputFocus() {
+    dispatch(onFoucus())
+  },
+  handleInputBluer() {
+    dispatch(onBlur())
+  },
+  handleMouseEnter() {
+    dispatch(onMoveEnter())
+  },
+  handleMouseOut() {
+    dispatch(onMoveOut())
+  },
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Header)
