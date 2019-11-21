@@ -159,8 +159,7 @@ export const SearchHeader = styled.div`
     }
 `
 export const SearchItem = styled.span`
-    border:1px solid #dddddd;
-    border-color: #b4b4b4;
+    border: 1px solid #b4b4b4;
     border-radius:3px;
     color: #787878;
     display:inline-block;
