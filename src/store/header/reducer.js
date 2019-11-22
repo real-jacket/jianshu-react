@@ -8,7 +8,7 @@ const defaultState = fromJS({
 
 export default function searchStatus(state = defaultState, action) {
   switch (action.type) {
-    case headerTypes.SEARCH_FOCOUS:
+    case headerTypes.SEARCH_FOCUS:
       return state.set('focused', true)
     case headerTypes.SEARCH_BLUR:
       return state.set('focused', false)

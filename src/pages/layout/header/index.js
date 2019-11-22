@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import {
-  onFoucus, onMoveEnter, onBlur, onMoveOut,
+  onFocus, onMoveEnter, onBlur, onMoveOut,
 } from '@/store/header/actions'
 import {
   Wrapper,
@@ -128,7 +128,7 @@ const mapStateToProps = (state /* , ownProps */) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   handleInputFocus() {
-    dispatch(onFoucus())
+    dispatch(onFocus())
   },
   handleInputBluer() {
     dispatch(onBlur())

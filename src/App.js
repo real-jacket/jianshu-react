@@ -1,13 +1,16 @@
 import React from 'react'
 import {
   BrowserRouter as Router,
+  Route,
   Switch,
+  Redirect,
 } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import Header from 'component/header'
 import GlobalStyle from '@/style'
 import store from '@/store'
-import router from '@/router'
+import NotFound from '@/pages/error/not-found'
+import Login from '@/pages/login'
+import Layout from '@/pages/layout'
 
 function App() {
   return (
@@ -16,8 +19,12 @@ function App() {
         <GlobalStyle />
         <Router>
           <Switch>
-            <Header />
-            {router}
+            <Route exact path="/">
+              <Redirect to="/app" />
+            </Route>
+            <Route path="/app" component={Layout} />
+            <Route path="/login" exact component={Login} />
+            <Route path="*" exact component={NotFound} />
           </Switch>
         </Router>
       </div>

@@ -1,7 +1,7 @@
 import * as headerTypes from './actionTypes'
 
-export const onFoucus = () => ({
-  type: headerTypes.SEARCH_FOCOUS,
+export const onFocus = () => ({
+  type: headerTypes.SEARCH_FOCUS,
 })
 
 export const onBlur = () => ({
