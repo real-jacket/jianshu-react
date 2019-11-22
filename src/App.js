@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Switch,
   Redirect,
@@ -17,8 +17,9 @@ function App() {
     <Provider store={store}>
       <div className="App">
         <GlobalStyle />
-        <Router>
+        <Router basename="/">
           <Switch>
+            <Route path="/404" exact component={NotFound} />
             <Route exact path="/">
               <Redirect to="/app" />
             </Route>
