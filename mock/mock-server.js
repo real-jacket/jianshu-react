@@ -7,7 +7,7 @@ const mockDir = path.join(process.cwd(), 'mock')
 
 function registerRoutes(app) {
   let mockLastIndex
-  const { default: mocks } = require('./index.js')
+  const mocks = require('./mock.js')
   // eslint-disable-next-line no-restricted-syntax
   for (const mock of mocks) {
     app[mock.type](mock.url, mock.response)
@@ -54,7 +54,7 @@ module.exports = (app) => {
       try {
         // remove mock routes stack
         // eslint-disable-next-line no-underscore-dangle
-        // app._router.stack.splice(mockStartIndex, mockRoutesLength)
+        app._router.stack.splice(mockStartIndex, mockRoutesLength)
 
         // clear routes cache
         unregisterRoutes()

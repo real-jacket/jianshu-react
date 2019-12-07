@@ -1,4 +1,4 @@
-import Mock from 'mockjs'
+const Mock = require('mockjs')
 
 const List = []
 const count = 10
@@ -18,12 +18,12 @@ for (let i = 0; i < count; i++) {
   }))
 }
 
-export default [
+module.exports = [
   {
-    url: '/artical/list',
+    url: '/article/list',
     type: 'get',
     response: () => ({
-      code: 2000,
+      code: 20000,
       data: {
         total: List.length,
         items: List,
