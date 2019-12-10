@@ -1,5 +1,7 @@
 import React from 'react'
+import ArticleItem from 'component/ArticleItem'
 import { fetchList } from '@/api/artical'
+import { Img } from '@/pages/home/index_style'
 
 class Home extends React.Component {
   constructor(props) {
@@ -14,7 +16,14 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>Home</div>
+      <div>
+        <Img>
+          <img src={`${process.env.PUBLIC_URL}/jianshu_home.png`} alt="diamongo" />
+        </Img>
+        <ul>
+          <ArticleItem />
+        </ul>
+      </div>
     )
   }
 }

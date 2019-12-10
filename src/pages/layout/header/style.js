@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.nav`
+    background-color: #fff;
     border-bottom:1px solid #f0f0f0;
     height: 60px;
     left: 0;
