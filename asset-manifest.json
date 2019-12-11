@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/jianshu-react/static/js/main.9954a74e.chunk.js",
+    "main.js.map": "/jianshu-react/static/js/main.9954a74e.chunk.js.map",
+    "runtime-main.js": "/jianshu-react/static/js/runtime-main.f0f4c81d.js",
+    "runtime-main.js.map": "/jianshu-react/static/js/runtime-main.f0f4c81d.js.map",
+    "static/js/2.e0e807f5.chunk.js": "/jianshu-react/static/js/2.e0e807f5.chunk.js",
+    "static/js/2.e0e807f5.chunk.js.map": "/jianshu-react/static/js/2.e0e807f5.chunk.js.map",
+    "index.html": "/jianshu-react/index.html",
+    "precache-manifest.9fb52aca400632b184cafced18ec1861.js": "/jianshu-react/precache-manifest.9fb52aca400632b184cafced18ec1861.js",
+    "service-worker.js": "/jianshu-react/service-worker.js"
+  }
+}
