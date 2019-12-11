@@ -6,22 +6,32 @@ import { Img } from '@/pages/home/index_style'
 class Home extends React.Component {
   constructor(props) {
     super(props)
-    console.log('执行到这里')
+    this.state = {
+      articleList: [],
+    }
+  }
+
+  componentDidMount() {
     fetchList().then((res) => {
-      console.log(res)
+      this.setState({
+        articleList: res.data.items,
+      })
     }).catch((err) => {
-      console.log(err)
+      console.warn(err)
     })
   }
 
   render() {
+    const { articleList } = this.state
     return (
       <div>
         <Img>
           <img src={`${process.env.PUBLIC_URL}/jianshu_home.png`} alt="diamongo" />
         </Img>
         <ul>
-          <ArticleItem />
+          {
+            articleList.map((item) => <ArticleItem key={`article${item.timestamp}`} detail={item} />)
+          }
         </ul>
       </div>
     )

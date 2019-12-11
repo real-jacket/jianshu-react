@@ -3,20 +3,46 @@ import {
   Img, Wrapper, Title, Content, Meta,
 } from 'component/ArticleItem/style'
 
-function ArticleItem() {
+function ArticleItem(props) {
+  const { detail } = props
   return (
     <Wrapper>
       <div>
-        <Title>山药饼，五十岁女人的绝佳早餐</Title>
-        <Content>这个清晨，阳光明媚，身体却有点不适，女人呀，到了一定年纪就是麻烦。 再烦，早餐还是要吃的，早餐是一天中最不轻易转变成脂肪的一餐，据说日本的相扑运...</Content>
+        <Title>{detail.title}</Title>
+        <Content>{detail.content_short}</Content>
         <Meta>
-          草草啖盐说蜜
+          <span style={{ color: '#ea6f5a' }}>
+            <svg className="icon" aria-hidden="true">
+              <use xlinkHref="#icon-diamond" />
+            </svg>
+            {detail.integrate}
+          </span>
+          <span>
+            {detail.author}
+          </span>
+          <span>
+            <svg className="icon" aria-hidden="true">
+              <use xlinkHref="#icon-comments" />
+            </svg>
+            {detail.comment_num}
+          </span>
+          <span>
+            <svg className="icon" aria-hidden="true">
+              <use xlinkHref="#icon-heart" />
+            </svg>
+            {detail.like_point}
+          </span>
         </Meta>
       </div>
-      <Img
-        alt="找不到图片"
-        src={`${process.env.PUBLIC_URL}/jianshu_article.jpg`}
-      />
+      {
+        detail.image_uri && (
+        <Img
+          alt="暂时找不到图片"
+          // src={`${process.env.PUBLIC_URL}/jianshu_article.jpg`}
+          src={detail.image_uri}
+        />
+        )
+      }
     </Wrapper>
   )
 }
