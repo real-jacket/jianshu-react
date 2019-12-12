@@ -27,7 +27,6 @@
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.4.0"
   },
-  "homepage": "https://real-jacket.github.io/jianshu-react",
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
