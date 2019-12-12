@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/jianshu-react/static/js/main.6481dfa2.chunk.js",
-    "main.js.map": "/jianshu-react/static/js/main.6481dfa2.chunk.js.map",
-    "runtime-main.js": "/jianshu-react/static/js/runtime-main.acab903b.js",
-    "runtime-main.js.map": "/jianshu-react/static/js/runtime-main.acab903b.js.map",
-    "static/js/2.0adc1838.chunk.js": "/jianshu-react/static/js/2.0adc1838.chunk.js",
-    "static/js/2.0adc1838.chunk.js.map": "/jianshu-react/static/js/2.0adc1838.chunk.js.map",
+    "main.js": "/jianshu-react/static/js/main.9ef7b799.chunk.js",
+    "main.js.map": "/jianshu-react/static/js/main.9ef7b799.chunk.js.map",
+    "runtime-main.js": "/jianshu-react/static/js/runtime-main.f0f4c81d.js",
+    "runtime-main.js.map": "/jianshu-react/static/js/runtime-main.f0f4c81d.js.map",
+    "static/js/2.9d490001.chunk.js": "/jianshu-react/static/js/2.9d490001.chunk.js",
+    "static/js/2.9d490001.chunk.js.map": "/jianshu-react/static/js/2.9d490001.chunk.js.map",
     "index.html": "/jianshu-react/index.html",
-    "precache-manifest.bfdf31d0c4f0f930ec1c0f390e61f2d8.js": "/jianshu-react/precache-manifest.bfdf31d0c4f0f930ec1c0f390e61f2d8.js",
+    "precache-manifest.a3723271443e0c669f2a0638d7c367bd.js": "/jianshu-react/precache-manifest.a3723271443e0c669f2a0638d7c367bd.js",
     "service-worker.js": "/jianshu-react/service-worker.js"
   }
 }
