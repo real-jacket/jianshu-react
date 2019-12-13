@@ -39,7 +39,7 @@ function ArticleItem(props) {
         <Img
           alt="暂时找不到图片"
           // src={`${process.env.PUBLIC_URL}/jianshu_article.jpg`}
-          src={detail.image_uri}
+          src={`${process.env.PUBLIC_URL}${detail.image_uri}`}
         />
         )
       }
