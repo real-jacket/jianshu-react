@@ -1,13 +1,13 @@
 const Mock = require('mockjs')
 const article = require('./article')
+const author = require('./author')
 
 
-// import user from './user'
 // import role from './role'
 // import search from './remote-search'
 
 const mocks = [
-  // ...user,
+  ...author,
   // ...role,
   ...article,
   // ...search

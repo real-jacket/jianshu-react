@@ -9,6 +9,9 @@ export const Img = styled.div`
     width: 100%;
   }
 `
-export const ArticleItem = styled.li`
+export const AppWrapper = styled.div`
+  margin-bottom: 30px;
+  padding: 10px 22px;
+  width:100%;
   
 `
