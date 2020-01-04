@@ -16,7 +16,7 @@ export const Title = styled.h2`
     font-weight: 700;
     line-height: 1.5;
     margin: -7px 0 4px;
-    &:visited{
+    &:visited {
         color: #969696;
     }
 `
@@ -25,7 +25,6 @@ export const Content = styled.p`
     font-size: 13px;
     line-height: 24px;
     margin: 0 0 8px;
-
 `
 export const Meta = styled.div`
     color: #b4b4b4;
@@ -33,9 +32,9 @@ export const Meta = styled.div`
     font-weight: 400;
     line-height: 20px;
     text-align: -webkit-match-parent;
-    span{
+    span {
         margin-right: 15px;
-        svg{
+        svg {
             margin-right: 4px;
         }
     }

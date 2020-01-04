@@ -12,13 +12,15 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    fetchList().then((res) => {
-      this.setState({
-        articleList: res.data.items,
+    fetchList()
+      .then((res) => {
+        this.setState({
+          articleList: res.data.items,
+        })
       })
-    }).catch((err) => {
-      console.warn(err)
-    })
+      .catch((err) => {
+        console.warn(err)
+      })
   }
 
   render() {
@@ -26,12 +28,18 @@ class Home extends React.Component {
     return (
       <div>
         <Img>
-          <img src={`${process.env.PUBLIC_URL}/jianshu_home.png`} alt="diamongo" />
+          <img
+            src={`${process.env.PUBLIC_URL}/jianshu_home.png`}
+            alt="diamongo"
+          />
         </Img>
         <ul>
-          {
-            articleList.map((item) => <ArticleItem key={`article${item.timestamp}`} detail={item} />)
-          }
+          {articleList.map((item) => (
+            <ArticleItem
+              key={`article${item.timestamp}`}
+              detail={item}
+            />
+          ))}
         </ul>
       </div>
     )

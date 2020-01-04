@@ -8,5 +8,4 @@ export default (
     <Route path="/app" exact component={HomeSidebar} />
     <Route path="/app/write" exact component={WriteSidebar} />
   </Switch>
-
 )

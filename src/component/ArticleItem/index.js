@@ -17,9 +17,7 @@ function ArticleItem(props) {
             </svg>
             {detail.integrate}
           </span>
-          <span>
-            {detail.author}
-          </span>
+          <span>{detail.author}</span>
           <span>
             <svg className="icon" aria-hidden="true">
               <use xlinkHref="#icon-comments" />
@@ -34,15 +32,13 @@ function ArticleItem(props) {
           </span>
         </Meta>
       </div>
-      {
-        detail.image_uri && (
+      {detail.image_uri && (
         <Img
           alt="暂时找不到图片"
-          // src={`${process.env.PUBLIC_URL}/jianshu_article.jpg`}
+                    // src={`${process.env.PUBLIC_URL}/jianshu_article.jpg`}
           src={`${process.env.PUBLIC_URL}${detail.image_uri}`}
         />
-        )
-      }
+      )}
     </Wrapper>
   )
 }
