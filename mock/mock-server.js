@@ -22,14 +22,14 @@ function registerRoutes(app) {
 }
 
 function unregisterRoutes() {
-  Object.keys(require.cache).forEach((i) => {
+  Object.keys(require.cache).forEach(i => {
     if (i.includes(mockDir)) {
       delete require.cache[require.resolve(i)]
     }
   })
 }
 
-module.exports = (app) => {
+module.exports = app => {
   // es6 polyfill
   // eslint-disable-next-line import/no-extraneous-dependencies
   require('@babel/register')
@@ -37,37 +37,45 @@ module.exports = (app) => {
   // parse app.body
   // https://expressjs.com/en/4x/api.html#req.body
   app.use(bodyParser.json())
-  app.use(bodyParser.urlencoded({
-    extended: true,
-  }))
+  app.use(
+    bodyParser.urlencoded({
+      extended: true,
+    }),
+  )
 
   const mockRoutes = registerRoutes(app)
   let mockRoutesLength = mockRoutes.mockRoutesLength
   let mockStartIndex = mockRoutes.mockStartIndex
 
   // watch files, hot reload mock server
-  chokidar.watch(mockDir, {
-    ignored: /mock-server/,
-    ignoreInitial: true,
-  }).on('all', (event, _path) => {
-    if (event === 'change' || event === 'add') {
-      try {
-        // remove mock routes stack
-        // eslint-disable-next-line no-underscore-dangle
-        app._router.stack.splice(mockStartIndex, mockRoutesLength)
+  chokidar
+    .watch(mockDir, {
+      ignored: /mock-server/,
+      ignoreInitial: true,
+    })
+    .on('all', (event, _path) => {
+      if (event === 'change' || event === 'add') {
+        try {
+          // remove mock routes stack
+          // eslint-disable-next-line no-underscore-dangle
+          app._router.stack.splice(mockStartIndex, mockRoutesLength)
 
-        // clear routes cache
-        unregisterRoutes()
+          // clear routes cache
+          unregisterRoutes()
 
-        // eslint-disable-next-line no-shadow
-        const mockRoutes = registerRoutes(app)
-        mockRoutesLength = mockRoutes.mockRoutesLength
-        mockStartIndex = mockRoutes.mockStartIndex
+          // eslint-disable-next-line no-shadow
+          const mockRoutes = registerRoutes(app)
+          mockRoutesLength = mockRoutes.mockRoutesLength
+          mockStartIndex = mockRoutes.mockStartIndex
 
-        console.log(chalk.magentaBright(`\n > Mock Server hot reload success! changed  ${_path}`))
-      } catch (error) {
-        console.log(chalk.redBright(error))
+          console.log(
+            chalk.magentaBright(
+              `\n > Mock Server hot reload success! changed  ${_path}`,
+            ),
+          )
+        } catch (error) {
+          console.log(chalk.redBright(error))
+        }
       }
-    }
-  })
+    })
 }

@@ -20,8 +20,7 @@ function AuthorItem(props) {
         <span>
           写了
           {detail.write}
-          k字 ·
-          {' '}
+          k字&nbsp;·&nbsp;
           {detail.like}
           k喜欢
         </span>

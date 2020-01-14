@@ -21,7 +21,7 @@ export default function mockXHR() {
   // https://github.com/nuysoft/Mock/issues/300
   Mock.XHR.prototype.proxy_send = Mock.XHR.prototype.send
   // eslint-disable-next-line func-names
-  Mock.XHR.prototype.send = function () {
+  Mock.XHR.prototype.send = function() {
     if (this.custom.xhr) {
       this.custom.xhr.withCredentials = this.withCredentials || false
 
@@ -34,7 +34,7 @@ export default function mockXHR() {
   }
 
   function XHR2ExpressReqWrap(respond) {
-    return (options) => {
+    return options => {
       let result = null
       if (respond instanceof Function) {
         const { body, type, url } = options
@@ -51,7 +51,11 @@ export default function mockXHR() {
     }
   }
 
-  mocks.forEach((i) => {
-    Mock.mock(new RegExp(i.url), i.type || 'get', XHR2ExpressReqWrap(i.response))
+  mocks.forEach(i => {
+    Mock.mock(
+      new RegExp(i.url),
+      i.type || 'get',
+      XHR2ExpressReqWrap(i.response),
+    )
   })
 }

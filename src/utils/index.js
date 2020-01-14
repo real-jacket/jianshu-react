@@ -9,12 +9,12 @@ export function param2Obj(url) {
     return {}
   }
   return JSON.parse(
-    `{"${
-      decodeURIComponent(search)
+    `{
+      "${decodeURIComponent(search)
         .replace(/"/g, '\\"')
         .replace(/&/g, '","')
         .replace(/=/g, '":"')
-        .replace(/\+/g, ' ')
-    }"}`,
+        .replace(/\+/g, ' ')}"
+    }`,
   )
 }

@@ -5,7 +5,7 @@ const SidebarWrapper = styled.div`
   margin-left: 4.2%;
   margin-top: -4px;
   padding-top: 30px;
-  width: 75%;
+  width: 30%;
 `
 
 export default SidebarWrapper

@@ -1,8 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {
-  onFocus, onMoveEnter, onBlur, onMoveOut,
-} from '@/store/header/actions'
+import { onFocus, onMoveEnter, onBlur, onMoveOut } from '@/store/header/actions'
 import {
   Wrapper,
   Logo,
@@ -17,26 +15,34 @@ import {
 
 function Header(props) {
   const {
-    focused, mouseIn, handleInputBluer, handleInputFocus, handleMouseEnter, handleMouseOut,
+    focused,
+    mouseIn,
+    handleInputBluer,
+    handleInputFocus,
+    handleMouseEnter,
+    handleMouseOut,
   } = props
   return (
     <Wrapper>
       <div className="header">
         <Logo>
-          <img src={`${process.env.PUBLIC_URL}/jianshu_log.png`} alt="Nav logo" />
+          <img
+            src={`${process.env.PUBLIC_URL}/jianshu_log.png`}
+            alt="Nav logo"
+          />
         </Logo>
         <Nav>
           <li className="home">
             <svg className="icon" aria-hidden="true">
               <use xlinkHref="#icon-zhinanzhen" />
             </svg>
-              首页
+            首页
           </li>
           <li className="download">
             <svg className="icon" aria-hidden="true">
               <use xlinkHref="#icon-shoujixiazai" />
             </svg>
-              下载App
+            下载App
           </li>
           <li className="navsearch">
             <NavSearch focus={focused}>
@@ -66,54 +72,44 @@ function Header(props) {
               >
                 <div className="wrapper">
                   <SearchHeader>
-                    <span>
-                        热门搜索
-                    </span>
+                    <span>热门搜索</span>
                     <span>
                       <svg className="icon" aria-hidden="true">
                         <use xlinkHref="#icon-qiehuan" />
                       </svg>
-                        换一换
+                      换一换
                     </span>
                   </SearchHeader>
-                  <SearchItem>
-                      销售易
-                  </SearchItem>
-                  <SearchItem>
-                      销售易
-                  </SearchItem>
-                  <SearchItem>
-                      销售易
-                  </SearchItem>
-                  <SearchItem>
-                      销售易
-                  </SearchItem>
-                  <SearchItem>
-                      销售易
-                  </SearchItem>
-                  <SearchItem>
-                      销售易
-                  </SearchItem>
-                  <SearchItem>
-                      销售易
-                  </SearchItem>
+                  <SearchItem>销售易</SearchItem>
+                  <SearchItem>销售易</SearchItem>
+                  <SearchItem>销售易</SearchItem>
+                  <SearchItem>销售易</SearchItem>
+                  <SearchItem>销售易</SearchItem>
+                  <SearchItem>销售易</SearchItem>
+                  <SearchItem>销售易</SearchItem>
                 </div>
               </SearchRecommend>
             </NavSearch>
           </li>
           <li className="login">
             <span className="Aa">Aa</span>
-            <img src={`${process.env.PUBLIC_URL}/jianshu_beta.png`} alt="diamongo" height="25" />
+            <img
+              src={`${process.env.PUBLIC_URL}/jianshu_beta.png`}
+              alt="diamongo"
+              height="25"
+            />
             <span>登录</span>
           </li>
         </Nav>
         <Addition>
-          <button type="button" className="register">注册</button>
+          <button type="button" className="register">
+            注册
+          </button>
           <button type="button" className="artical">
             <svg className="icon" aria-hidden="true">
               <use xlinkHref="#icon-yumaobi" />
             </svg>
-              写文章
+            写文章
           </button>
         </Addition>
       </div>
@@ -126,7 +122,7 @@ const mapStateToProps = (state /* , ownProps */) => ({
   mouseIn: state.getIn(['header', 'mouseIn']),
 })
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   handleInputFocus() {
     dispatch(onFocus())
   },
@@ -141,7 +137,4 @@ const mapDispatchToProps = (dispatch) => ({
   },
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Header)
+export default connect(mapStateToProps, mapDispatchToProps)(Header)

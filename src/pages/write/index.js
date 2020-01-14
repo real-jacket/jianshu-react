@@ -1,7 +1,9 @@
 import React from 'react'
+import { useQuery } from '@/utils/customHook'
 
 function Write() {
-  return <div>Write</div>
+  const query = useQuery()
+  return <div>{query.get('title')}</div>
 }
 
 export default Write

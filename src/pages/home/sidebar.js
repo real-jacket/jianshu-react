@@ -23,12 +23,12 @@ class HomeSidebar extends React.Component {
 
   componentDidMount() {
     fetchList()
-      .then((res) => {
+      .then(res => {
         this.setState({
           authorList: res.data.items,
         })
       })
-      .catch((err) => {
+      .catch(err => {
         console.warn(err)
       })
   }
@@ -37,7 +37,7 @@ class HomeSidebar extends React.Component {
     const { authorList } = this.state
     return (
       <Wrapper>
-        {['member', 'good', 'copyright', 'school'].map((name) => (
+        {['member', 'good', 'copyright', 'school'].map(name => (
           <Board
             key={name}
             src={`${process.env.PUBLIC_URL}/pic/home/sidebar_${name}.png`}
@@ -46,16 +46,10 @@ class HomeSidebar extends React.Component {
         <AppWrapper>
           <div className="code">
             <span className="ankle" />
-            <img
-              src={`${process.env.PUBLIC_URL}/code.png`}
-              alt="code"
-            />
+            <img src={`${process.env.PUBLIC_URL}/code.png`} alt="code" />
           </div>
           <DownloadWrapper>
-            <img
-              src={`${process.env.PUBLIC_URL}/code.png`}
-              alt="code"
-            />
+            <img src={`${process.env.PUBLIC_URL}/code.png`} alt="code" />
             <div>
               <Title>下载简书手机App &#62; </Title>
               <Description>随时随地发现和创作内容</Description>
@@ -69,14 +63,11 @@ class HomeSidebar extends React.Component {
               <svg className="icon" aria-hidden="true">
                 <use xlinkHref="#icon-qiehuan" />
               </svg>
-                            换一换
+              换一换
             </span>
           </Header>
-          {authorList.map((item) => (
-            <AuthorItem
-              key={`author${item.timestamp}`}
-              detail={item}
-            />
+          {authorList.map(item => (
+            <AuthorItem key={`author${item.timestamp}`} detail={item} />
           ))}
         </AuthorWrapper>
         <More>查看全部 &#62; </More>

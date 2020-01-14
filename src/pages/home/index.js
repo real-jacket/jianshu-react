@@ -13,12 +13,12 @@ class Home extends React.Component {
 
   componentDidMount() {
     fetchList()
-      .then((res) => {
+      .then(res => {
         this.setState({
           articleList: res.data.items,
         })
       })
-      .catch((err) => {
+      .catch(err => {
         console.warn(err)
       })
   }
@@ -34,11 +34,8 @@ class Home extends React.Component {
           />
         </Img>
         <ul>
-          {articleList.map((item) => (
-            <ArticleItem
-              key={`article${item.timestamp}`}
-              detail={item}
-            />
+          {articleList.map(item => (
+            <ArticleItem key={`article${item.timestamp}`} detail={item} />
           ))}
         </ul>
       </div>

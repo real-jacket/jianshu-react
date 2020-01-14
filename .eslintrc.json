@@ -1,6 +1,7 @@
 {
-    "extends": "airbnb",
+    "extends": ["airbnb","plugin:prettier/recommended"],
     "plugins": [
+      "prettier",
       "react",
       "better-styled-components"
     ],
@@ -22,6 +23,7 @@
       }
     },
     "rules": {
+      "prettier/prettier": "error",
       "better-styled-components/sort-declarations-alphabetically": 2,// styled-component
       "linebreak-style": ["off", "windows"], // 换行符
       "eqeqeq": 0,
@@ -42,6 +44,8 @@
       "react/prop-types": 0,
       "react/jsx-filename-extension": [1, {
         "extensions": [".js", ".jsx"]
-      }]
+      }],
+      "jsx-a11y/no-static-element-interactions": "off",
+      "jsx-a11y/click-events-have-key-events": "off"
     }
   }
